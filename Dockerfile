@@ -36,16 +36,6 @@ RUN set -x; \
         -b $MEDIAWIKI_VERSION \
         https://gerrit.wikimedia.org/r/p/mediawiki/core.git \
        /var/www/html \
-#    && cd /var/www/html \
-#    && git submodule update --init skins \
-#    && git submodule update --init vendor \
-#    && cd extensions \
-#    # VisualEditor
-#    # TODO: make submodules shallow clones?
-#    && git submodule update --init VisualEditor \
-#    && cd VisualEditor \
-#    && git checkout $MEDIAWIKI_VERSION \
-#    && git submodule update --init
     && git clone \
         --depth 1 \
         -b $MEDIAWIKI_VERSION \
