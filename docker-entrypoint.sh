@@ -110,7 +110,12 @@ if ($_ENV['MEDIAWIKI_DB_TYPE'] == 'mysql') {
 EOPHP
 
 cd /var/www/html
-# FIXME: Keep php files out of the doc root.
+# FIXME: Keep php files out of the doc root.a
+
+#create symlink so images and styles  will load when base url is not document root or with short urls configured
+: ${MEDIAWIKI_BASEPATH:=w}
+
+ln -s /var/www/html "/var/www/html/$MEDIAWIKI_BASEPATH"
 
 : ${MEDIAWIKI_SHARED:=/data}
 
